@@ -1,6 +1,4 @@
-<script>
 
-</script>
 
 <template>
   <div>
@@ -8,6 +6,10 @@
     <img class="logo vue" src="./assets/logo-vue.svg" alt="Vue logo" />
   </div>
 </template>
+
+<script>
+
+</script>
 
 <style scoped>
 .logo {
