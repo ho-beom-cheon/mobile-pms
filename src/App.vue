@@ -1,18 +1,12 @@
 <template>
   <div id="app">
-    <router-view name="header"></router-view>
-    <main>
-      <transition name="fade" mode="out-in">
-        <router-view/>
-      </transition>
-    </main>
-    <router-view name="footer"></router-view>
+    <!-- 이 안에 렌더링 됩니다. -->
+    <router-view/>
   </div>
 </template>
 
 <script>
 import { ref } from 'vue';
-
 export default {
   setup() {
     const fade = ref('fade');
