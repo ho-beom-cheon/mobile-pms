@@ -1,25 +1,41 @@
 <template>
-  <div>
-    <img class="logo" src="./assets/logo.svg" alt="Vue logo" />
-    <img class="logo vue" src="./assets/logo-vue.svg" alt="Vue logo" />
+  <div id="app">
+    <router-view name="header"></router-view>
+    <main>
+      <transition name="fade" mode="out-in">
+        <router-view/>
+      </transition>
+    </main>
+    <router-view name="footer"></router-view>
   </div>
 </template>
 
 <script>
+import { ref } from 'vue';
 
+export default {
+  setup() {
+    const fade = ref('fade');
+    return { fade };
+  },
+};
 </script>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+<style>
+@import "./assets/bootstrap-5.1.3-dist/css/bootstrap.css";
+@import "./assets/css/reset.css";
+@import "./assets/css/theme.css";
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
 }
 </style>
